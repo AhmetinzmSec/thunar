@@ -17,7 +17,7 @@ exports.run = async (client, message, args) => {
         .format(" D [gün], H [saat], m [dakika], s [saniye]");
     const istatistikler = new Discord.MessageEmbed()
         .setTitle("Bot Paneli")
-        .addField("» **Botun Sahibi ve Geliştirici**", "[Picadro](https://discord.com/users/801006452416184330/)")
+        .addField("» **Botun Sahibi ve Geliştirici**", "[Toxygen (Picadro)](https://discord.com/users/801006452416184330/)")
         .addField("» **Gecikme süreleri**", "Mesaj Gecikme süresi {ping1} ms \nBot Gecikmesi: {ping2} ms"
             .replace("{ping1}", new Date().getTime() - message.createdTimestamp)
             .replace("{ping2}", client.ws.ping))
@@ -37,7 +37,7 @@ exports.run = async (client, message, args) => {
         .addField("❗ **Varsayılan Prefix**", prefix, true)
         .addField("⁉ **Bu Sunucudaki Prefix**", `${prefixxx}`, true)
         .addField("💌 **Bot Davet**", " [Davet Et](https://discordapp.com/oauth2/authorize?client_id=" + client.user.id + "&scope=bot&permissions=8)", true)
-        .addField("💪 **Destek Sunucusu**", "[Quantum Team](https://discord.gg/27tJMzY8qN)", true)
+        .addField("💪 **Destek Sunucusu**", "[Thunar](https://discord.gg/27tJMzY8qN)", true)
         .setColor(renk)
         .setFooter(slogan)
     return message.channel.send(istatistikler);
