@@ -19,7 +19,7 @@ exports.run = (client, message, args) => {
     if (!kabulettimi) return message.channel.send(kabuletmedi);
 
     const embed = new Discord.MessageEmbed()
-        .setImage(message.author.displayAvatarURL({dynamic: true, size: 4096, format: 'png'}))
+        .setImage(mention.displayAvatarURL({dynamic: true, size: 4096, format: 'png'}))
         .setColor(renk)
         .setFooter(slogan)
         .setTitle("Avatarınız;");
@@ -27,7 +27,7 @@ exports.run = (client, message, args) => {
     const button = new MessageButton()
         .setLabel('Avatar URL')
         .setStyle('url')
-        .setURL(message.author.displayAvatarURL({dynamic: true, size: 4096, format: 'png'}));
+        .setURL(mention.displayAvatarURL({dynamic: true, size: 4096, format: 'png'}));
 
     return message.channel.send({
         embed: embed, component: button
