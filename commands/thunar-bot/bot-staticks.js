@@ -37,7 +37,7 @@ exports.run = async (client, message, args) => {
         .addField("❗ **Varsayılan Prefix**", prefix, true)
         .addField("⁉ **Bu Sunucudaki Prefix**", `${prefixxx}`, true)
         .addField("💌 **Bot Davet**", " [Davet Et](https://discordapp.com/oauth2/authorize?client_id=" + client.user.id + "&scope=bot&permissions=8)", true)
-        .addField("💪 **Destek Sunucusu**", "[Thunar Federasyonu](https://pnd.one/sL9FO)", true)
+        .addField("💪 **Destek Sunucusu**", "[Thunar Federasyonu](https://discord.gg/qgYhfW93FC)", true)
         .setColor(renk)
         .setFooter(slogan)
     return message.channel.send(istatistikler);
