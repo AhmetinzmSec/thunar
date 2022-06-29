@@ -8,8 +8,6 @@ exports.run = async (client, message, args) => {
         var embed = new MessageEmbed()
             .setTitle('Thunar Sürüm Bilgisi')
             .addField(`Sürüm :`, `***${version}***`)
-            .addField(`Kütüphane Sürüm :`, `***v13.6.0***`)
-            .addField('Yama Sürümü :', `***${yama_surum}***`)
             .addField('Sürüm Kod Adı :', `***${version_name}***`)
             .addField('Sürüm Notları :', `${surum_notlari}`)
             .setColor(renk)
