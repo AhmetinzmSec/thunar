@@ -13,7 +13,7 @@ exports.run = (client, message, args) => {
 
     const kabuletmedi = new MessageEmbed()
         .setTitle("Avatar Görüntülenemiyor")
-        .setDescription("Görünüşe göre bu kullanıcı Thunar Kullanıcı Sözleşmesi'ni kabul etmemiş. Sözümü tutarak bu kullanıcının avatarını gösteremiyorum")
+        .setDescription("Görünüşe göre bu kullanıcı Thunar Kullanıcı Sözleşmesi'ni kabul etmemiş. Gizlilik politikamız gereği bu kullanıcının avatarını gösteremiyorum")
         .setColor(renk)
         .setFooter(slogan)
     if (!kabulettimi) return message.channel.send(kabuletmedi);

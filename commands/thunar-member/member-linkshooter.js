@@ -1,12 +1,24 @@
 const Discord = require("discord.js");
 const {MessageEmbed} = require("discord.js");
-const pnd = require('pnd.tl')('584902e504247ecfffa2f20c85ff51c6aa53a3a1');
+const pnd = require('pnd.tl')('e591a04ce875619bdf35beda9127c03f83a2e473');
 const {renk, slogan} = require('../../versioninfo.json')
+const db = require("quick.db");
 
 exports.run = async (client, message, args) => {
 
     const link = args[0];
     const type = args[1];
+
+    if (db.has(`reklam_${message.guild.id}`)) {
+
+        const linkyasak = new MessageEmbed()
+            .setTitle("Kısaltma Başarısız")
+            .setDescription("Görünüşe göre bu sunucuda reklam engeli bulunuyor. Link göndermek yasak olduğu için kısaltma yapılamıyor")
+            .setColor(renk)
+            .setFooter(slogan)
+        if (!message.member.hasPermission("MANAGE_CHANNELS")) return message.channel.send(linkyasak);
+
+    }
 
     const linkyok = new MessageEmbed()
         .setTitle("Link Bulunamadı")

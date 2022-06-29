@@ -14,7 +14,7 @@ exports.run = (client, message, args) => {
 
     const kabuletmedi = new MessageEmbed()
         .setTitle("Profil Görüntülenemiyor")
-        .setDescription("Görünüşe göre bu kullanıcı Thunar Kullanıcı Sözleşmesi'ni kabul etmemiş. Sözümü tutarak bu kullanıcının profilini gösteremiyorum")
+        .setDescription("Görünüşe göre bu kullanıcı Thunar Kullanıcı Sözleşmesi'ni kabul etmemiş. Gizlilik politikamız gereği bu kullanıcının profilini gösteremiyorum")
         .setColor(renk)
         .setFooter(slogan)
     if (!kabulettimi) return message.channel.send(kabuletmedi);

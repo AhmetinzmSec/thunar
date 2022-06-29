@@ -1,5 +1,7 @@
 const Discord = require('discord.js');
 const { renk, slogan } = require("../../versioninfo.json");
+const {MessageEmbed} = require("discord.js");
+const db = require("quick.db");
 
 exports.run = async (client, message, args) => {// Can°B#1308
 
@@ -10,6 +12,15 @@ exports.run = async (client, message, args) => {// Can°B#1308
         member = message.member;
 
     }
+
+    let kabulettimi = db.fetch(`kabulettimi_${member.id}`);
+
+    const kabuletmedi = new MessageEmbed()
+        .setTitle("Bağlantı Noktası Görüntülenemiyor")
+        .setDescription("Görünüşe göre bu kullanıcı Thunar Kullanıcı Sözleşmesi'ni kabul etmemiş. Gizlilik politikamız gereği bu kullanıcının bağlantı noktasını gösteremiyorum")
+        .setColor(renk)
+        .setFooter(slogan)
+    if (!kabulettimi) return message.channel.send(kabuletmedi);
 
     let baknedicm = {
         web: 'İnternet Tarayıcısı',
