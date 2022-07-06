@@ -4,7 +4,10 @@ const {MessageEmbed} = require('discord.js');
 const {renk, slogan} = require("../../versioninfo.json");
 
 exports.run = async (client, message, args) => {
+    
+    message.channel.send("Hop birader arızalıyız şurda")
 
+    /*
     const yetkimyokbruh = new discord.MessageEmbed()
         .setAuthor("Yetki Reddedildi")
         .setDescription("Görünüşe göre Thunar'ın bu sunucuda yeterli yetkisi yok. `KANALLARI_YÖNET` yetkisini vererek veya Thunar rolünü en üste taşıyarak yeniden deneyiniz")
@@ -46,6 +49,7 @@ exports.run = async (client, message, args) => {
         return caremode('Bakım modu açıldı.\nArtık hiç bir kimse (Geliştiricim hariç) birimleri kullanamayacak.');
     }
     ;
+    */
 
 };
 exports.conf = {
