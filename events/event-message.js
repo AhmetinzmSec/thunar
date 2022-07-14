@@ -80,6 +80,12 @@ module.exports = async message => {
         }
     }
     ;
+    
+     if (cmd) {
+
+        message.channel.send("15 Temmuz Şehitlerimizi Saygı ve Rahmetle Anıyoruz...")
+
+    }
 
     if (cmd) {
 
