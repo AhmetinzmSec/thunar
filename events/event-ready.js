@@ -13,7 +13,7 @@ module.exports = client => {
 
     console.log(`TOPLAM KOMUT SAYISI : ${client.commands.size}`)
 
-    var randommessages = [
+    /*var randommessages = [
 
         `${version} || !şartlar`,
         `${version} || !yardım`,
@@ -29,8 +29,10 @@ module.exports = client => {
         client.user.setActivity(randommessages1, { type: 'PLAYING' });
 
     }, 5000);
+    
+    */
 
-    /* client.user.setActivity(`${version} || +yardım`, {type: 'PLAYING'}); */
+    client.user.setActivity(`15 Temmuz Şehitlerimizi Saygı ve Rahmetle Anıyoruz....`, {type: 'PLAYING'});
 
     client.on('message', msg => {
         client.emit('checkMessage', msg);
