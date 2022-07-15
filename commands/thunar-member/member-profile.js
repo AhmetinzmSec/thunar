@@ -12,13 +12,6 @@ exports.run = (client, message, args) => {
 
     let kabulettimi = db.fetch(`kabulettimi_${mention.id}`);
 
-    const kabuletmedi = new MessageEmbed()
-        .setTitle("Profil Görüntülenemiyor")
-        .setDescription("Görünüşe göre bu kullanıcı Thunar Kullanıcı Sözleşmesi'ni kabul etmemiş. Gizlilik politikamız gereği bu kullanıcının profilini gösteremiyorum")
-        .setColor(renk)
-        .setFooter(slogan)
-    if (!kabulettimi) return message.channel.send(kabuletmedi);
-
     let mentionMember = message.guild.members.cache.get(mention.id);
 
     let slm = {
@@ -196,6 +189,41 @@ exports.run = (client, message, args) => {
         .replace('offline', '<:offline:880495818690412566> Çevrimdışı')
     userinfo.od1 = message.guild.members.cache.get(mention.id).user.presence.game || "Oynadığı Bir Oyun Yok.";
 
+    const kabuletmedi = new MessageEmbed()
+
+        .setAuthor(mention.tag, mention.avatarURL({ dynamic: true }))
+        .setThumbnail(mention.avatarURL({ dynamic: true }))
+        .setDescription("Kullanıcı gizlilik politikamızı kabul etmediği için belirli kısıtlamalar ile proifl içeriği görüntüleniyor")
+        .addField("> Kullanıcı Bilgi", "** **")
+        .addField('**__Durum__**', 'Gizlilik politikası uygulanıyor', true)
+        .addField('**__Ad__**', ` ${mention.username}`, true)
+        .addField('**__Rozetler__**', `${rozetler ? mentionFlags : 'Rozet Almamış'}`, true)
+        .addField('**__Kullanıcı Kimliği__**', `Gizlilik politikası uygulanıyor`, true)
+        .addField(
+
+            `**__Güvenilirlik__**`,
+
+            `${(
+                (new Date().getTime()) - mention.createdAt.getTime() <
+                15 * 24 * 60 * 60 * 1000
+                    ? ":warning:  Tehlikeli"
+                    : ":shield:  Güvenli"
+            )}
+      `,
+
+            true
+
+        )
+        .addField("> Tarih Bilgisi", "** **")
+        .addField('**__Discord`a Kayıt Tarihi__**', `Gizlilik politikası uygulanıyor`, true)
+        .addField(">  Sunucu İçi Bilgisi", "** **")
+        .addField('**__Takma Ad__**', `:scroll:  ${mentionMember.displayName}`, true)
+        .addField('**__Roller__**', `:scroll:  ${mentionMember.roles.cache.filter(a => a.name !== '@everyone').map(a => a).join(' ') ? mentionMember.roles.cache.filter(a => a.name !== '@everyone').map(a => a).join(' ') : 'Hiç yok.'}`, true)
+        .setColor(renk)
+        .setFooter(slogan)
+
+    if (!kabulettimi) return message.channel.send(kabuletmedi);
+
     const embed = new Discord.MessageEmbed()
         .setAuthor(mention.tag, mention.avatarURL({ dynamic: true }))
         .setThumbnail(mention.avatarURL({ dynamic: true }))
@@ -227,7 +255,7 @@ exports.run = (client, message, args) => {
         .setColor(renk)
         .setFooter(slogan)
 
-    message.channel.send(embed);
+    if (kabulettimi) return message.channel.send(embed);
 };
 exports.conf = {
     enabled: true,
