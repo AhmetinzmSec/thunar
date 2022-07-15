@@ -1,11 +1,11 @@
 {
-    "version": "Alpha v0.2.3",
-    "version_name": "Niagara",
-    "yama_surum": "YAMA 134",
+    "version": "Beta v0.3 Test",
+    "version_name": "Kandil",
+    "yama_surum": "YAMA 0",
     "botstatus": "Bot Bakım Modunda",
     "botstatusno": "Bot Kullanıma Açık",
     "discord_js": "v13.6.0",
-    "renk": "BLACK",
-    "slogan": "15 Temmuz Şehitlerimizi Saygı ve Rahmetle Anıyoruz...",
-    "surum_notlari": "**15 Temmuz Şehitlerimizin Anısına Yayınlanan Sürüm Hizmetinizde**"
+    "renk": "9c0c2b",
+    "slogan": "Thunar, Özgür & Bağımsız Topluluklar 🤝",
+    "surum_notlari": "**1 - )** Güvenlik iyileştirmeleri \n\n **2 - )** Gizlilik politikamıza aykırı sorunlar giderildi \n\n **3 - )** Level sistemi *(yeniden)* eklendi \n\n **4 - )** Doğrulaama sistemi gelişmiş biçimde güncellendi \n\n **5 - )** Doğrulaama sistemi sistemindeki arızalar düzeltildi \n\n **5 - )** DM üzerinden doğrulama sistemi eklendi"
 }
