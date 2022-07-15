@@ -32,6 +32,10 @@ exports.run = (client, message, args, member, bot) => {
 
     let logid = db.fetch("botlog" + message.guild.id)
 
+    let botinfo = db.fetch("botinfo" + message.guild.id)
+
+    let botinfosend = message.guild.channels.cache.get(botinfo)
+
     const channellog = message.guild.channels.cache.get(logid)
 
     let preffix = db.fetch(`prefix_${message.guild.id}`)
@@ -42,6 +46,13 @@ exports.run = (client, message, args, member, bot) => {
     if (!pref) return message.reply(`İstenilen argümanları doldurduğundan emin ol. (Örnek Kullanım; \`${prefixxx}ekle <id> <prefix> <evet/hayır>\`)`)
     if (onay != "evet" && onay != "hayır" && onay != "Evet" && onay != "Hayır") return message.reply("Bot onay sorgulamasında hata. Sadece `evet` ya da `hayır` argümanları kullanılabilir")
     if (isNaN(link)) return message.reply('ID Sayısal Bir Değer İçermelidir');
+
+    const yanliskanal = new MessageEmbed()
+        .setTitle("Lobi Kanalı Burası Değil")
+        .setDescription(`Sunucunun bot ekleme lobisi burası değil. <#`+ channellog +`> kanalına eklemek istediğin botu yazmayı deneyebilirsin`)
+        .setColor(renk)
+        .setFooter(slogan)
+    if (message.channel.id != channellog) return message.channel.send(yanliskanal);
 
     const aldik = new MessageEmbed()
         .setTitle("Bot Ekleme İsteği")
@@ -73,26 +84,33 @@ exports.run = (client, message, args, member, bot) => {
         .setColor(renk)
         .setFooter(slogan)
 
+    const botalindi = new MessageEmbed()
+        .setTitle("Bot Bekleme Lobisinde")
+        .setDescription(`<@!${user}> isimli kullanıcının <@!${link}> adlı botu bekleme lobisinde ⌛`)
+        .setColor(renk)
+        .setFooter(slogan)
+    botinfosend.send(botalindi)
+
     channel.send(embed, {buttons: [buttonOnay, buttonIptal]}).then(async function (sent) {
         sent.createButtonCollector(user => user.clicker.user.id).on('collect', async (button) => {
             if (button.id == "buttonOnay") {
 
                 const onay = new MessageEmbed()
                     .setTitle("Bot Ekleme Onaylandı")
-                    .setDescription(`Hey <@!${user}>, botun onaylandı`)
+                    .setDescription(`<@!${user}> isimli kullanıcının <@!${link}> adlı botu onaylandı 🥳`)
                     .setColor(renk)
                     .setFooter(slogan)
-                channellog.send(onay)
+                botinfosend.send(onay)
                 button.reply.defer()
 
             } else if (button.id == "buttonIptal") {
 
                 const red = new MessageEmbed()
                     .setTitle("Bot Ekleme Reddedildi")
-                    .setDescription(`<@!${user}> Dostum... Botun reddedildi`)
+                    .setDescription(`<@!${user}> Dostum... Botun reddedildi ❌`)
                     .setColor(renk)
                     .setFooter(slogan)
-                channellog.send(red)
+                botinfosend.send(red)
                 button.reply.defer()
 
             }
