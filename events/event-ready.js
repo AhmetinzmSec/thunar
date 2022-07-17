@@ -28,7 +28,7 @@ module.exports = client => {
 
         client.user.setActivity(randommessages1, { type: 'PLAYING' });
 
-    }, 5000);
+    }, 10000);
     
 
     /*client.user.setActivity(`15 Temmuz Şehitlerimizi Saygı ve Rahmetle Anıyoruz...`, {type: 'PLAYING'});*/
