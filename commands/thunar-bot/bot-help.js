@@ -5,7 +5,7 @@ const {version, version_name, renk, slogan} = require('../../versioninfo.json')
 
 exports.run = async (client, message, args) => {
     if (message.author.bot) return;
-    message.channel.send(`Sunucu İle Anahtar Takası Yapılıyor...`).then(async msj => {
+    message.channel.send(`Veri Getiriliyor`).then(async msj => {
         const botPing = (msj.createdTimestamp - message.createdTimestamp);
         msj.delete();
         const btn1 = new disbut.MessageMenuOption()
