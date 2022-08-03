@@ -5,14 +5,14 @@ const {version, version_name, renk, slogan} = require('../../versioninfo.json')
 
 exports.run = async (client, message, args) => {
     if (message.author.bot) return;
-    message.channel.send(`Veri Getiriliyor`).then(async msj => {
+    message.channel.send(`Sunucu İle Anahtar Takası Yapılıyor...`).then(async msj => {
         const botPing = (msj.createdTimestamp - message.createdTimestamp);
         msj.delete();
         const btn1 = new disbut.MessageMenuOption()
             .setLabel('Thunar Yardım Üssü')
             .setDescription("Thunar yardım üssü")
             .setValue('1')
-            .setEmoji("938209604406493224")
+            .setEmoji("1004478039905808445")
         const btn2 = new disbut.MessageMenuOption()
             .setLabel('Bot Temel Birimler')
             .setDescription(`Temel birimleri gösterir`)
@@ -22,7 +22,7 @@ exports.run = async (client, message, args) => {
             .setLabel('BotList Birimleri')
             .setDescription(`Thunar botlist birimlerini gösterir`)
             .setValue('3')
-            .setEmoji("937859718326652929")
+            .setEmoji("1004479370037051453")
         const btn4 = new disbut.MessageMenuOption()
             .setLabel('Thunar Para Üssü')
             .setDescription(`Thunar para üssü birimlerini gösterir`)
