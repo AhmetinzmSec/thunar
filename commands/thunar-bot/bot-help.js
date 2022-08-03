@@ -125,7 +125,7 @@ exports.run = async (client, message, args) => {
             .setDescription("Aşağıda botlist birimlerinin bir dokümanı bulunmaktadır.")
             .addFields(
                 {
-                    name: `<:coinboru:937859718326652929> Thunar Para Üssü`,
+                    name: `<:bot:1004479370037051453> Thunar BotList Üssü`,
                     value: `>>> | **bot-ekle [ID] [prefix] [DBL Onay Durumu]** \n Botlist sistemi aktifse bot eklemek için gerekli bilgilerin kaydını yapar \n\n | **bot-client** \n Bot ekleme isteklelerinin geleceği kanalı ayarlar \n\n | **botlist #kanal** \n Etiketlediğiniz kanalı botlist kanalı olarak atar`,
                     inline: false
                 },
