@@ -17,7 +17,7 @@ exports.run = async (client, message, args) => {
         .format(" D [gün], H [saat], m [dakika], s [saniye]");
     const istatistikler = new Discord.MessageEmbed()
         .setTitle("Bot Paneli")
-        .addField("» **Botun Sahibi ve Geliştirici**", "[Toxygen (Picadro)](https://discord.com/users/801006452416184330/)")
+        .addField("» **Botun Sahibi ve Geliştirici**", "[BUG](https://discord.com/users/801006452416184330/)")
         .addField("» **Gecikme süreleri**", "Mesaj Gecikme süresi {ping1} ms \nBot Gecikmesi: {ping2} ms"
             .replace("{ping1}", new Date().getTime() - message.createdTimestamp)
             .replace("{ping2}", client.ws.ping))
