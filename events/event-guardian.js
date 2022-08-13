@@ -46,7 +46,7 @@ module.exports = member => {
     var embedv1 = new Discord.MessageEmbed()
 
         .setAuthor(member.user.username, member.user.displayAvatarURL({dynamic: true, format: "png", size: 1024}))
-        .setTitle("Kullanıcı Test Edildi")
+        .setTitle("Radar Raporu")
         .setThumbnail(member.guild.iconURL({dynamic: true, format: "png", size: 1024}))
         .setDescription(textcikcik)
         .addField(`Katılan Kişi:`, `${member}`, true)

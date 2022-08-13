@@ -17,6 +17,8 @@ module.exports = client => {
 
         `${version} || !şartlar`,
         `${version} || !yardım`,
+        `${version} || Ticket Güncellemesi!`,
+        `${version} || 10+ Yeni Dev Birimler!`,
         `${version} || ${version_name}`
 
     ]
@@ -29,9 +31,8 @@ module.exports = client => {
         client.user.setActivity(randommessages1, { type: 'PLAYING' });
 
     }, 10000);
-    
 
-    /*client.user.setActivity(`15 Temmuz Şehitlerimizi Saygı ve Rahmetle Anıyoruz...`, {type: 'PLAYING'});*/
+    /* client.user.setActivity(`${version} || +yardım`, {type: 'PLAYING'}); */
 
     client.on('message', msg => {
         client.emit('checkMessage', msg);

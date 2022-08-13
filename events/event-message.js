@@ -80,19 +80,11 @@ module.exports = async message => {
         }
     }
     ;
-    
-     /* if (cmd) {
-
-        message.channel.send("15 Temmuz Şehitlerimizi Saygı ve Rahmetle Anıyoruz...")
-
-    }
-    */
 
     if (cmd) {
 
+        /*
         let kabulettimi = db.fetch(`kabulettimi_${message.author.id}`)
-        
-        message.channel.send("15 Ağustos ***Alpha v0.5 || Gece Vadisi*** Güncellemesi ile Beraber Şart Kabul Kontrol Sistemi Kullanımdan Kaldırılacaktır")
 
         const kabuletmedi = new MessageEmbed()
             .setTitle("Erişim Sağlanamadı")
@@ -100,6 +92,7 @@ module.exports = async message => {
             .setColor(renk)
             .setFooter(slogan)
         if (!kabulettimi && (command !== "şartlar" && command !== "kayıt")) return message.channel.send(kabuletmedi)
+        */
 
         if (perms < cmd.conf.permLevel) return;
         cmd.run(client, message, params, perms);

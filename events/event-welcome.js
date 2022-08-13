@@ -14,7 +14,7 @@ module.exports = (member) => {
     let embed = new MessageEmbed()
         .setTitle("Yeni Üyemiz Var!")
         .setDescription(`• Hoşgeldin **${member.user.username}!** \n • Seninle beraber **${member.guild.memberCount}** kişi olduk!`)
-        .setImage("https://i.hizliresim.com/kr09umu.png")
+        .setImage("https://i.hizliresim.com/13c619i.png")
         .setColor(renk)
         .setFooter(slogan)
     welbyechannel.send(embed)
