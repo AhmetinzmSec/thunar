@@ -16,6 +16,7 @@ module.exports = client => {
 
     client.on('messageUpdate', reqEvent('event-updatedmessage')); // Düzenlenen Mesajların Kaydını Tutan Sistem Tanımlandı
 
+
     client.on('guildMemberAdd', reqEvent('event-guardian')); // Güvenlik Sistemi Tanımlandı
     client.on('guildMemberAdd', reqEvent('event-autorole')); // Otomatik Rol Sistemi Tanımlandı
     client.on('guildMemberAdd', reqEvent('event-tagtest')); // Yasaklı Tag Sistemi Tanımlandı
