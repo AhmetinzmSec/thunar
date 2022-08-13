@@ -17,7 +17,8 @@ module.exports.run = async (client, message, args) => {
     let mention = message.author;
     if (message.mentions.members.first()) mention = message.mentions.members.first().user;
 
-    let kabulettimi = db.fetch(`kabulettimi_${mention.id}`);
+    /*
+    * let kabulettimi = db.fetch(`kabulettimi_${mention.id}`);
 
     const kabuletmedi = new MessageEmbed()
         .setTitle("Rank Görüntülenemiyor")
@@ -25,6 +26,7 @@ module.exports.run = async (client, message, args) => {
         .setColor(renk)
         .setFooter(slogan)
     if (!kabulettimi) return message.channel.send(kabuletmedi);
+    * */
 
     let user = message.mentions.users.first() || client.users.cache.get(args[0]) || message.author;
 
@@ -38,7 +40,7 @@ module.exports.run = async (client, message, args) => {
 
     const card = new canvacord.Rank()
         .setUsername(user.username)
-        .setBackground("IMAGE", "https://i.hizliresim.com/si8y672.png")
+        .setBackground("IMAGE", "https://i.hizliresim.com/98otl7d.png")
         .setDiscriminator(user.discriminator)
         .setRank(seviye)
         .setLevel(seyit)

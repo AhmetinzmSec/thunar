@@ -7,13 +7,6 @@ exports.run = async (client, message, args) => {
 
     let uid = user.id
 
-    const kabuletmedi = new MessageEmbed()
-        .setTitle("Afiş Görüntülenemiyor")
-        .setDescription("Görünüşe göre bu kullanıcı Thunar Kullanıcı Sözleşmesi'ni kabul etmemiş. Gizlilik politikamız gereği bu kullanıcının afişini gösteremiyorum")
-        .setColor(renk)
-        .setFooter(slogan)
-    if (!kabulettimi) return message.channel.send(kabuletmedi);
-
     let response = fetch(`https://discord.com/api/v8/users/${uid}`, {
         method: 'GET',
         headers: {

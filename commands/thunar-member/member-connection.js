@@ -13,7 +13,8 @@ exports.run = async (client, message, args) => {// Can°B#1308
 
     }
 
-    let kabulettimi = db.fetch(`kabulettimi_${member.id}`);
+    /*
+    * let kabulettimi = db.fetch(`kabulettimi_${member.id}`);
 
     const kabuletmedi = new MessageEmbed()
         .setTitle("Bağlantı Noktası Görüntülenemiyor")
@@ -21,6 +22,7 @@ exports.run = async (client, message, args) => {// Can°B#1308
         .setColor(renk)
         .setFooter(slogan)
     if (!kabulettimi) return message.channel.send(kabuletmedi);
+    * */
 
     let baknedicm = {
         web: 'İnternet Tarayıcısı',

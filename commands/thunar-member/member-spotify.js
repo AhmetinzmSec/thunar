@@ -10,12 +10,14 @@ exports.run = async (client, message, args) => {
 
     let kabulettimi = db.fetch(`kabulettimi_${user.id}`);
 
-    const kabuletmedi = new MessageEmbed()
+    /*
+    * const kabuletmedi = new MessageEmbed()
         .setTitle("Spotify Bilgisi Görüntülenemiyor")
         .setDescription("Görünüşe göre bu kullanıcı Thunar Kullanıcı Sözleşmesi'ni kabul etmemiş. Sözümü tutarak bu kullanıcının spotify bilgisini gösteremiyorum")
         .setColor(renk)
         .setFooter(slogan)
     if (!kabulettimi) return message.channel.send(kabuletmedi);
+    * */
 
     let spotify = user.presence.activities.filter(x => x.name == 'Spotify' && x.type == 'LISTENING')[0];
     if (!spotify) return message.channel.send("Spotify Açık Değil!");

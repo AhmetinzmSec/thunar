@@ -189,7 +189,7 @@ exports.run = (client, message, args) => {
         .replace('offline', '<:offline:880495818690412566> Çevrimdışı')
     userinfo.od1 = message.guild.members.cache.get(mention.id).user.presence.game || "Oynadığı Bir Oyun Yok.";
 
-    const kabuletmedi = new MessageEmbed()
+    /*const kabuletmedi = new MessageEmbed()
 
         .setAuthor(mention.tag, mention.avatarURL({ dynamic: true }))
         .setThumbnail(mention.avatarURL({ dynamic: true }))
@@ -222,7 +222,7 @@ exports.run = (client, message, args) => {
         .setColor(renk)
         .setFooter(slogan)
 
-    if (!kabulettimi) return message.channel.send(kabuletmedi);
+    if (!kabulettimi) return message.channel.send(kabuletmedi);*/
 
     const embed = new Discord.MessageEmbed()
         .setAuthor(mention.tag, mention.avatarURL({ dynamic: true }))

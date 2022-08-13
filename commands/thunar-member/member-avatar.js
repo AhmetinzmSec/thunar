@@ -9,7 +9,8 @@ exports.run = (client, message, args) => {
     let mention = message.author;
     if (message.mentions.members.first()) mention = message.mentions.members.first().user;
 
-    let kabulettimi = db.fetch(`kabulettimi_${mention.id}`);
+    /*
+    * let kabulettimi = db.fetch(`kabulettimi_${mention.id}`);
 
     const kabuletmedi = new MessageEmbed()
         .setTitle("Avatar Görüntülenemiyor")
@@ -17,6 +18,7 @@ exports.run = (client, message, args) => {
         .setColor(renk)
         .setFooter(slogan)
     if (!kabulettimi) return message.channel.send(kabuletmedi);
+    * */
 
     const embed = new Discord.MessageEmbed()
         .setImage(mention.displayAvatarURL({dynamic: true, size: 4096, format: 'png'}))
