@@ -16,11 +16,11 @@ exports.run = async (bot, message, args) => {
     let logkanal = await db.fetch(`guvenlikkanali_${message.guild.id}`)
 
     if (args[0] === "sıfırla" || args[0] === "kapat") {
-        if (!logkanal) return message.channel.send(`Güvenliği kapatmak için \`güvenlik kanalının\` seçili olması lazım örnek kullanım: \`!güvenlik #kanal\``);
+        if (!logkanal) return message.channel.send(`Radar denetimini kapatmak için \`radar kanalının\` seçili olması gereklidir örnek kullanım: \`!güvenlik #kanal\``);
 
         db.delete(`guvenlikkanali_${message.guild.id}`)
 
-        message.channel.send(`Güvenlik başarıyla kapatıldı.`);
+        message.channel.send(`Radar Rapor başarıyla kapatıldı.`);
         return
     }
 
@@ -29,7 +29,7 @@ exports.run = async (bot, message, args) => {
 
     db.set(`guvenlikkanali_${message.guild.id}`, logk.id)
 
-    message.channel.send(`Güvenlik kanalı ${logk} olarak ayarlandı\nSıfırlamak için !güvenlik sıfırla`);
+    message.channel.send(`Radar Rapor kanalı ${logk} olarak ayarlandı\nSıfırlamak için !güvenlik sıfırla`);
 
 }
 
@@ -44,7 +44,7 @@ module.exports.conf = {
 };
 
 module.exports.help = {
-    name: 'güvenlik',
+    name: 'radar',
     description: 'Güvenlik kanalı ayarlar',
     usage: 'güvenlik'
 };
