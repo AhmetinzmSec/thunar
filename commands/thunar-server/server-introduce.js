@@ -21,7 +21,7 @@ exports.run = (client, message, args) => {
             .addField("Sunucu Link", `[${guild}](${invite})`)
             .setColor(renk)
             .setFooter(slogan)
-        channel.send(embed).then(i => i.react("<:partner:934888927955914802>"))
+        channel.send(embed)
 
     });
 
