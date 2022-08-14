@@ -166,9 +166,9 @@ exports.run = (client, message, args) => {
     };
 
     let mentionFlags = mention.flags.toArray().join(' | ')
-        .replace('HOUSE_BRAVERY', '<:bravery:899228014674595870> Bravery')
-        .replace('HOUSE_BRILLIANCE', '<:brillance:899228017690304522>  Brilliance')
-        .replace('HOUSE_BALANCE', '<:balance:899228017291833364>  Balance')
+        .replace('HOUSE_BRAVERY', '<:bravery:1008477379418665011> Bravery')
+        .replace('HOUSE_BRILLIANCE', '<:brillance:1008477381318693004>  Brilliance')
+        .replace('HOUSE_BALANCE', '<:balance:1008477377459929108>  Balance')
         .replace('VERIFIED_DEVELOPER', '1. Dönemde Doğrulanmış Bot Geliştiricisi')
         .replace('DISCORD_EMPLOYEE', 'Discord Çalışanı')
         .replace('PARTNERED_SERVER_OWNER', 'Discord Partner')
@@ -183,10 +183,10 @@ exports.run = (client, message, args) => {
         .replace('SERVER_BOOSTING', 'Sunucu Takviyecisi');
     let userinfo = {};
     userinfo.status = mention.presence.status.toString()
-        .replace('online', '<:online:880495809139970048> Çevrimiçi')
-        .replace('idle', '<:idle:880495819852238868> Boşta')
-        .replace('dnd', '<:dnd:880495819869003846> Rahatsız Etmeyin')
-        .replace('offline', '<:offline:880495818690412566> Çevrimdışı')
+        .replace('online', '<:online:1008477375778000946> Çevrimiçi')
+        .replace('idle', '<:idle:1008477374020587590> Boşta')
+        .replace('dnd', '<:dnd:1008477370228940871> Rahatsız Etmeyin')
+        .replace('offline', '<:offline:1008477371977973862> Çevrimdışı')
     userinfo.od1 = message.guild.members.cache.get(mention.id).user.presence.game || "Oynadığı Bir Oyun Yok.";
 
     /*const kabuletmedi = new MessageEmbed()
