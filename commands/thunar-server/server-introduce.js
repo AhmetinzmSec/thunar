@@ -1,8 +1,5 @@
 const Discord = require('discord.js');
 const {MessageEmbed} = require('discord.js');
-const moment = require('moment');
-require('moment-duration-format');
-const os = require('os');
 const {renk, slogan} = require("../../versioninfo.json");
 const db = require('quick.db')
 
