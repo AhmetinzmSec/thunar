@@ -13,22 +13,6 @@ exports.run = async (client, message, args) => {
     if (message.guild.verificationLevel == "HIGH") moderasyonseviye = "Yüksek";
     if (message.guild.verificationLevel == "VERY_HIGH") moderasyonseviye = "Çok Yüksek";
 
-
-    const data1 = await message.channel.send("Sistem denetleniyor...")
-    await data1.delete()
-    const data2 = await message.channel.send("Sunucu sorgulanıyor...")
-    await data2.delete()
-    const data3 = await message.channel.send("Güvenli veri alışverişine hazırlanılıyor...")
-    await data3.delete()
-    const data4 = await message.channel.send("API ile anahtar takası yapılıyor...")
-    await data4.delete()
-    const data5 = await message.channel.send("Veri anonimize ediliyor...")
-    await data5.delete()
-    const data6 = await message.channel.send("Veri getiriliyor...")
-    await data6.delete()
-    const data7 = await message.channel.send("Neredeyse Hazır!")
-    await data7.delete()
-
     const embed = new discord.MessageEmbed()
 
         .setTitle(`${message.guild.name}`, true)
