@@ -38,7 +38,7 @@ exports.run = async (client, message, args) => {
     } else {
 
         await database.set(client.user.id, true);
-        database.set(client.user.id + ':)', {
+        database.set(client.user.id + ':'), {
             author: message.author,
             time: Date.now()
         });
