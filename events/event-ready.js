@@ -18,7 +18,7 @@ module.exports = client => {
         `${version} || !şartlar`,
         `${version} || !yardım`,
         `${version} || Ticket Güncellemesi!`,
-        `${version} || 2 Haftada Bir Büyük Güncellemeler...`,
+        `${version} || 10+ Yeni Dev Birimler!`,
         `${version} || ${version_name}`
 
     ]
