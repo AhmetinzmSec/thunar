@@ -82,6 +82,18 @@ module.exports = async message => {
     ;
 
     if (cmd) {
+
+        /*
+        let kabulettimi = db.fetch(`kabulettimi_${message.author.id}`)
+
+        const kabuletmedi = new MessageEmbed()
+            .setTitle("Erişim Sağlanamadı")
+            .setDescription("Thunar'a erişim izni verilirken bir sorun oluştu. Görünüşe göre Thunar'ın kullanıcı sözleşmesini kabul etmemişsiniz. `!şartlar` yazarak kullanıcı sözleşmesini gözden geçirebilirsiniz")
+            .setColor(renk)
+            .setFooter(slogan)
+        if (!kabulettimi && (command !== "şartlar" && command !== "kayıt")) return message.channel.send(kabuletmedi)
+        */
+
         if (perms < cmd.conf.permLevel) return;
         cmd.run(client, message, params, perms);
 
