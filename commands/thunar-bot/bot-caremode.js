@@ -5,7 +5,7 @@ const {renk, slogan} = require("../../versioninfo.json");
 
 exports.run = async (client, message, args) => {
 
-    const yetkimyokbruh = new discord.MessageEmbed()
+    const yetkimyokbruh = new Discord.MessageEmbed()
         .setAuthor("Yetki Reddedildi")
         .setDescription("Görünüşe göre Thunar'ın bu sunucuda yeterli yetkisi yok. `KANALLARI_YÖNET` yetkisini vererek veya Thunar rolünü en üste taşıyarak yeniden deneyiniz")
         .setColor(renk)
