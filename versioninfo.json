@@ -1,11 +1,11 @@
 {
-    "version": "Alpha v0.5.1",
-    "version_name": "Gece Vadisi",
+    "version": "Beta v0.6 Test",
+    "version_name": "Mulan",
     "yama_surum": "YAMA 0",
     "botstatus": "Bot Bakım Modunda",
     "botstatusno": "Bot Kullanıma Açık",
     "discord_js": "v13.6.0",
     "renk": "02102f",
     "slogan": "Thunar, Özgür & Bağımsız Topluluklar 🤝",
-    "surum_notlari": "***Kullanıcı Şartlarımız Güncellenmiştir*** \n\n **1 - )** `7` Yeni Ticket komutuları  \n\n **2 - )** Yeni Referans komutu \n\n **3 - )** BotList komutlarında görsel düzeltmeler yapıldı \n\n **4 - )** `3` Yeni Toplantı komutları \n\n **5 - )** Force Ban komutunda iyileştirmeler yapıldı \n\n **6 - )** Yeni Toplu Kullanıcı İsmi Sıfırlama komutu \n\n **7 - )** Yeni belirlenebilen Yasaklı Kelime sistemi \n\n **8 - )** Yeni butonlu mesaj silme birimi test amaçlı belirli sunuculara gönderildi"
+    "surum_notlari": "***Kullanıcı Şartlarımız Güncellenmiştir*** \n\n **1 - )** `7` Yeni Ticket komutuları  \n\n **2 - )** Yeni Referans komutu \n\n **3 - )** BotList komutlarında görsel düzeltmeler yapıldı \n\n **4 - )** `3` Yeni Toplantı komutları \n\n **5 - )** Force Ban komutunda iyileştirmeler yapıldı \n\n **6 - )** Yeni Toplu Kullanıcı İsmi Sıfırlama komutu \n\n **7 - )** Yeni belirlenebilen Yasaklı Kelime sistemi"
 }
