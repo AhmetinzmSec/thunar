@@ -66,7 +66,7 @@ mongodb.connection.on("open", async () => {
 
     client.on('guildCreate', async guild => {
 
-        const sunucu = client.channels.cache.get("925412630057865266")
+        const sunucu = client.channels.cache.get("971113611860799528")
         const embed = new Discord.MessageEmbed()
             .setTitle("Thunar Yeni Bir Sunucuda Hizmete Başladı")
             .setDescription(`• Artık Thunar **${client.guilds.cache.size.toLocaleString()}** Sunucuda Hizmette`)
@@ -81,7 +81,7 @@ mongodb.connection.on("open", async () => {
 
     client.on('guildDelete', async guild => {
 
-        const sunucu = client.channels.cache.get("925412630057865266")
+        const sunucu = client.channels.cache.get("971113611860799528")
         const embed = new Discord.MessageEmbed()
             .setTitle("Thunar Bir Sunucuda Hizmetini Durdurdu")
             .setDescription(`• Artık Thunar **${client.guilds.cache.size.toLocaleString()}** Sunucuda Hizmette`)
