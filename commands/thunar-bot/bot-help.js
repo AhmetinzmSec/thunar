@@ -22,7 +22,7 @@ exports.run = async (client, message, args) => {
             .setLabel('BotList Birimleri')
             .setDescription(`Thunar botlist birimlerini gösterir`)
             .setValue('3')
-            .setEmoji("1004479370037051453")
+            .setEmoji("1010936203501109258")
         const btn4 = new disbut.MessageMenuOption()
             .setLabel('Thunar Para Üssü')
             .setDescription(`Thunar para üssü birimlerini gösterir`)
@@ -125,7 +125,7 @@ exports.run = async (client, message, args) => {
             .setDescription("Aşağıda botlist birimlerinin bir dokümanı bulunmaktadır.")
             .addFields(
                 {
-                    name: `<:bot:1004479370037051453> Thunar BotList Üssü`,
+                    name: `<:bot:1010936203501109258> Thunar BotList Üssü`,
                     value: `>>> | **bot-ekle [ID] [prefix] [DBL Onay Durumu]** \n Botlist sistemi aktifse bot eklemek için gerekli bilgilerin kaydını yapar \n\n | **bot-client** \n Bot ekleme isteklelerinin geleceği kanalı ayarlar \n\n | **botlist #kanal** \n Etiketlediğiniz kanalı botlist kanalı olarak atar`,
                     inline: false
                 },
