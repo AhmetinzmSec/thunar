@@ -1,5 +1,5 @@
 {
-    "version": "Alpha v0.5.2",
+    "version": "Alpha v0.5.3",
     "version_name": "Gece Vadisi",
     "yama_surum": "YAMA 0",
     "botstatus": "Bot Bakım Modunda",
@@ -7,5 +7,5 @@
     "discord_js": "v13.6.0",
     "renk": "02102f",
     "slogan": "Thunar, Özgür & Bağımsız Topluluklar 🤝",
-    "surum_notlari": "***Alpha v0.5.2*** \n\n Çeşitli Hata Düzeltmeleri"
+    "surum_notlari": "***Alpha v0.5.3*** \n\n Performans İyileştirmeleri"
 }
