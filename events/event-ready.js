@@ -32,7 +32,7 @@ module.exports = client => {
 
         client.user.setActivity(randommessages1, { type: 'PLAYING' });
 
-    }, 10000);
+    }, 15000);
 
     /* client.user.setActivity(`${version} || +yardım`, {type: 'PLAYING'}); */
 
