@@ -93,13 +93,6 @@ module.exports = async message => {
             .setFooter(slogan)
         if (!kabulettimi && (command !== "şartlar" && command !== "kayıt")) return message.channel.send(kabuletmedi)
         */
-        
-        const sizinti = new MessageEmbed()
-            .setTitle("Olası Veri Sızıntısı")
-            .setDescription("Thunar'da olası bir veri sızıntısı olduğunu düşünüyoruz. Kullanıcı verilerini riske atmayan fakat botun kendi verilerini sızdıran yazılım kütüphanesi açığı ile karşılaştık. Sakin olun. Verileriniz Thunar ile güvende. Söz verdiğimiz gibi...")
-            .setColor("#AA1803")
-            .setFooter(slogan)
-        return message.channel.send(sizinti)
 
         if (perms < cmd.conf.permLevel) return;
         cmd.run(client, message, params, perms);
