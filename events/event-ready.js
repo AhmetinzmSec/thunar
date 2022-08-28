@@ -17,8 +17,8 @@ module.exports = client => {
 
         `${version} || !şartlar`,
         `${version} || !yardım`,
-        `${version} || Efsanevi Güncellemeye Son 3 Gün!`,
-        `${version} || Büyük Değişime 3 Gün!`,
+        `${version} || Efsanevi Güncellemeye Son 2 Gün!`,
+        `${version} || Büyük Değişime 2 Gün!`,
         `${version} || Mulan Hazır! Çok Yakında Sizlerle...`,
         `${version} || ${version_name}`
 
