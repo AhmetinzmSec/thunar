@@ -27,18 +27,26 @@ exports.run = async (client, message, args) => {
         .then(res => res.json())
         .then(invite => {
             const embed = new MessageEmbed()
-                .setTitle("Sistem Çalışır Duruma Getirildi")
-                .setDescription(`[Buraya](https://discord.gg/${invite.code}) Tıklayarak Menzile Girebilirsiniz`)
+                .setTitle("Parti Başlatılmaya Hazır")
+                .setDescription(`***Partiyi Başlat*** Butonuna Tıklayarak Menzile Girebilirsiniz`)
                 .setColor(renk)
                 .setFooter(slogan)
-            return message.channel.send(embed);
+
+            const button = new MessageButton()
+                .setLabel("🎉 Partiyi Başlat")
+                .setStyle('url')
+                .setURL(`https://discord.gg/${invite.code}`);
+
+            return message.channel.send({
+                embed: embed, component: button
+            });
         })
 
 }
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: ["ses", "yt", "play", "music", "müzik"],
+    aliases: ["ses", "yt", "play", "music", "müzik", "parti"],
     permLevel: 0
 };
 
