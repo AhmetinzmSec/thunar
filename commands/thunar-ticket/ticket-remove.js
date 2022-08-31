@@ -1,12 +1,10 @@
 const Discord = require('discord.js');
 const db = require('quick.db')
-const {token, default_prefix} = require('../../config.json');
+const {token} = require('../../config.json');
 const discord = require("discord.js");
 const {renk, slogan} = require("../../versioninfo.json");
 
 exports.run = async (client, message, args) => {
-    let prefix = await db.get(`prefix_${message.guild.id}`);
-    if (prefix === null) prefix = default_prefix;
 
     if (message.channel.name.includes('ticket-')) {
         const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(x => x.user.username === args.slice(0).join(' ') || x.user.username === args[0]);
@@ -41,7 +39,7 @@ exports.run = async (client, message, args) => {
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: [],
+    aliases: ['kaldır'],
     permLevel: 0
 };
 

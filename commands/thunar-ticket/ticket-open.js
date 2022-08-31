@@ -1,12 +1,10 @@
 const Discord = require('discord.js');
 const db = require('quick.db')
-const { token, default_prefix } = require('../../config.json');
+const { token} = require('../../config.json');
 const discord = require("discord.js");
 const {renk, slogan} = require("../../versioninfo.json");
 
 exports.run = async (client, message, args) => {
-        let prefix = await db.get(`prefix_${message.guild.id}`);
-		if(prefix === null) prefix = default_prefix;
 
 		if (message.channel.name.includes('ticket-')) {
 			const member = message.guild.members.cache.get(message.channel.name.split('ticket-').join(''));
@@ -49,7 +47,7 @@ exports.run = async (client, message, args) => {
 exports.conf = {
 	enabled: true,
 	guildOnly: false,
-	aliases: [],
+	aliases: ['aç'],
 	permLevel: 0
 };
 

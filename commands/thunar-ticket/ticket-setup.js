@@ -9,7 +9,7 @@ exports.run = async (client, message, args) => {
     if (prefix === null) prefix = default_prefix;
 
     const yetkimyok = new discord.MessageEmbed()
-        .setTitle("Thunar'a İzin Denetimini Geçemedi")
+        .setTitle("Thunar İzin Denetimini Geçemedi")
         .setDescription('**Thunar tarafından bu birimin işlenmesi için bota `KANALI_TAŞI` ya da `YÖNETİCİ` yetkisine sahip olmalıdır**')
         .setColor(renk)
         .setFooter(slogan)
@@ -68,7 +68,7 @@ exports.run = async (client, message, args) => {
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: ["ticket", "bilet"],
+    aliases: ["ticket", "bilet","yükle"],
     permLevel: 0
 };
 

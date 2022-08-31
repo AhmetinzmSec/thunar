@@ -1,12 +1,10 @@
 const Discord = require('discord.js');
 const db = require('quick.db')
-const { token, default_prefix } = require('../../config.json');
+const { token} = require('../../config.json');
 const sourcebin = require('sourcebin_js');
 const {renk, slogan} = require("../../versioninfo.json");
 
 exports.run = async (client, message, args) => {
-        let prefix = await db.get(`prefix_${message.guild.id}`);
-		if(prefix === null) prefix = default_prefix;
 
 		const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0]) || message.channel;
 		if (channel.name.includes('ticket-')) {
@@ -46,7 +44,7 @@ exports.run = async (client, message, args) => {
 				.setDescription(`Bu komutu burada kullanamazsınız, Lütfen bu komutu açık bir bilette kullanın`)
 				.setFooter(slogan)
 				.setColor(renk);
-			return message.reply();
+			return message.reply(yasak);
 		}
 }
 
