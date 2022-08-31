@@ -6,6 +6,7 @@ const AdmZip = require('adm-zip')
 const {renk, slogan} = require("../../versioninfo.json");
 
 exports.run = async (client, message, args) => {
+
     const error = (str) => message.channel.send(new Discord.MessageEmbed().setColor(renk).setTitle('Hata').setDescription(str));
 
     const yuzdeHesapla = (p1, p2) => {
@@ -48,16 +49,18 @@ exports.run = async (client, message, args) => {
             return emojies.includes(reaction.emoji.name) && message.author.id == user.id;
         };
 
-        const collector = m.createReactionCollector(filter, { max: 1, time: 30000 })
+        const collector = m.createReactionCollector(filter, {max: 1, time: 30000})
         collector.on('collect', (reaction, user) => {
             switch (reaction.emoji.name) {
                 case '✅':
                     m.reactions.removeAll();
                     fs.promises.mkdir('emojiler')
-                    var yuklenen = 1; kalan = message.guild.emojis.cache.size;
+                    var yuklenen = 1;
+                    kalan = message.guild.emojis.cache.size;
                     message.guild.emojis.cache.forEach(async emoji => {
                         const timeout = setTimeout(async () => {
-                            var emojiURL = emoji.url, emojiAd = emoji.name, emojiUzanti = emoji.url.split('.')[3].trim();
+                            var emojiURL = emoji.url, emojiAd = emoji.name,
+                                emojiUzanti = emoji.url.split('.')[3].trim();
                             await downloadImage(emojiURL, `emojiler/${emojiAd}.${emojiUzanti}`);
                             await m.edit(new Discord.MessageEmbed().setTitle('Emoji İndirme').setColor(renk).addField('Toplam Emoji Sayısı', message.guild.emojis.cache.size, true).addField('Kaç Emoji Kaldı', kalan).addField('Yüzdelik', `Yüklenen: %${yuzdeHesapla(kalan, message.guild.emojis.cache.size)}`).setFooter(`yaklaşık ${yaklasikSure(kalan)} süre kaldı`))
                             await clearTimeout(timeout)
@@ -69,7 +72,7 @@ exports.run = async (client, message, args) => {
                                 const embed = new Discord.MessageEmbed().setTitle('Emoji İndirme').setColor(renk).setDescription(`**İşlem tamamlandı!** Toplam **${message.guild.emojis.cache.size} adet** emoji indirildi.`)
                                 m.edit(embed);
                                 message.channel.send({
-                                    files: [{ name: 'picadro.zip', attachment: '/picadrosec.zip' }]
+                                    files: [{name: 'picadro.zip', attachment: '/picadrosec.zip'}]
                                 })
                             }
                         }, yuklenen * 2000);
@@ -80,7 +83,8 @@ exports.run = async (client, message, args) => {
                     m.reactions.removeAll();
                     m.edit(new Discord.MessageEmbed().setColor(renk).setDescription(`İşlem kullanıcı isteğiyle iptal edildi`));
                     break;
-            };
+            }
+            ;
         });
 
         collector.on('end', collected => {

@@ -22,7 +22,7 @@ exports.run = async (client, message, args) => {
 
     const eksikarguman = new MessageEmbed()
         .setTitle('Eksik veya Yanlış Argüman')
-        .setDescription(`**Komutun düzgün kullanımı aç/kapat argümanlarından oluşur. (Örnek kullanım; \`${prefixxx}antispam aç/kapat\`**`)
+        .setDescription(`**Birimin düzgün kullanımı aç/kapat argümanlarından oluşur. (Örnek kullanım; \`${prefixxx}level aç/kapat\`**`)
         .setColor(renk)
         .setFooter(slogan)
 

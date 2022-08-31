@@ -24,7 +24,7 @@ exports.run = async (client, message, args) => {
 exports.conf = {
     enabled: true,
     guildOnly: true,
-    aliases: ['invinumber'],
+    aliases: ['invinumber', 'davet-listesi', 'davetlistesi', 'dl'],
     usage: 'Sadece komutun ismini yazmanız yeterlidir',
     permLevel: 0
 };
