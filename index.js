@@ -66,7 +66,7 @@ mongodb.connection.on("open", async () => {
 
     client.on('guildCreate', async guild => {
 
-        const sunucu = client.channels.cache.get("971113611860799528")
+        const sunucu = client.channels.cache.get("925412630057865266")
         const embed = new Discord.MessageEmbed()
             .setTitle("Thunar Yeni Bir Sunucuda Hizmete Başladı")
             .setDescription(`• Artık Thunar **${client.guilds.cache.size.toLocaleString()}** Sunucuda Hizmette`)
@@ -81,7 +81,7 @@ mongodb.connection.on("open", async () => {
 
     client.on('guildDelete', async guild => {
 
-        const sunucu = client.channels.cache.get("971113611860799528")
+        const sunucu = client.channels.cache.get("925412630057865266")
         const embed = new Discord.MessageEmbed()
             .setTitle("Thunar Bir Sunucuda Hizmetini Durdurdu")
             .setDescription(`• Artık Thunar **${client.guilds.cache.size.toLocaleString()}** Sunucuda Hizmette`)
@@ -93,6 +93,96 @@ mongodb.connection.on("open", async () => {
         sunucu.send(embed)
 
     });
+
+    /***************************************************************************************************/
+
+    client.on("guildMemberUpdate", (oldMember, newMember) => {
+
+        if (!db.has("log" + oldMember.guild.id)) return;
+        const log_id = db.fetch("log" + oldMember.guild.id)
+        const log = oldMember.guild.channels.cache.get(log_id)
+
+        if (oldMember.roles.cache.size > newMember.roles.cache.size) {
+
+            const Embed = new Discord.MessageEmbed()
+                .setColor(renk)
+                .setFooter(slogan)
+            oldMember.roles.cache.forEach(role => {
+                if (!newMember.roles.cache.has(role.id)) {
+                    Embed.setTitle("Üyeden Rol Kaldırıldı")
+                    Embed.setDescription(`${newMember.user.tag} kişisinden ${role} isimli rol kaldırıldı`)
+                }
+            });
+
+            log.send(Embed);
+        } else if (oldMember.roles.cache.size < newMember.roles.cache.size) {
+            const Embed = new Discord.MessageEmbed()
+                .setColor(renk)
+                .setFooter(slogan)
+
+            // Looping through the role and checking which role was added.
+            newMember.roles.cache.forEach(role => {
+                if (!oldMember.roles.cache.has(role.id)) {
+                    Embed.setTitle("Üyeye Rol Eklendi")
+                    Embed.setDescription(`${newMember.user.tag} kişisine ${role} isimli rol verildi`)
+                }
+            });
+            log.send(Embed);
+        }
+    });
+
+    /***************************************************************************************************/
+
+    client.on("message", message => {
+        if (!message.author.bot) {
+            if (message.content == db.get(`${message.guild.id}özelkismi`)) {
+                return message.channel.send(db.get(`${message.guild.id}özelkyazi`))
+            }
+        }
+    })
+
+    /***************************************************************************************************/
+
+    client.on("guildMemberAdd", member => {
+
+        const guild = member.guild;
+
+
+        if (!db.has("log" + member.guild.id)) return;
+        const log_id = db.fetch("log" + member.guild.id)
+        const log = member.guild.channels.cache.get(log_id) // banlanınca mesajı gideceği kanal
+
+        if (db.has(`botban_${member.guild.id}`, "acik")){
+
+        if (member.user.bot !== true) {
+
+        } else {
+
+            const banbot = new MessageEmbed()
+                .setTitle("Bot Yasaklandı")
+                .setDescription(`Sunucuya bir bot eklendi. Bu sunucuda botlara izin verilmediği için yasaklandı`)
+                .addField("Yasaklanan Bot:",  member.user.tag)
+                .setColor(renk)
+                .setFooter(slogan)
+
+             log.send(banbot)
+
+                .catch(console.error);
+
+            member.ban(member);
+
+        }
+
+        } else
+        {
+
+            return;
+
+        }
+
+    })
+
+    /***************************************************************************************************/
 
     console.log("MongoDB Bağlantısı Sağlandı")
 
