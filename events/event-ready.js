@@ -17,9 +17,7 @@ module.exports = client => {
 
         `${version} || !şartlar`,
         `${version} || !yardım`,
-        `${version} || Efsanevi Güncelleme Bu Gece Kullanımda!`,
-        `${version} || Büyük Değişim Bu Gece Kullanımda!`,
-        `${version} || Mulan Hazır! Bu Gece Sizlerle...`,
+        `${version} || !güncellemeler`,
         `${version} || ${version_name}`
 
     ]
@@ -31,7 +29,7 @@ module.exports = client => {
 
         client.user.setActivity(randommessages1, { type: 'PLAYING' });
 
-    }, 15000);
+    }, 10000);
 
     /* client.user.setActivity(`${version} || +yardım`, {type: 'PLAYING'}); */
 

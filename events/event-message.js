@@ -4,6 +4,7 @@ const db = require('quick.db'); // Database Tanımlandı
 const database = require('../database');
 const ayarlar = require('../config.json'); // Prefix Dosyaya Çağrıldı
 const { renk, slogan } = require("../versioninfo.json");
+const discord = require("discord.js");
 
 module.exports = async message => {
 
@@ -70,7 +71,7 @@ module.exports = async message => {
                 const embed = new MessageEmbed()
                     .setTitle("Bir saniye...")
                     .setDescription(`${message.author}`)
-                    .addField("Thunar Şu Anda Uykuda:", `Yaklaşık ***${RESULT} önce*** bakıma alınmış`, true)
+                    .addField("Thunar Şu Anda Güncelleniyor:", `Yaklaşık ***${RESULT} önce*** bakıma alınmış`, true)
                     .setColor(renk)
                     .setFooter(slogan)
                 return message.reply(embed);
