@@ -12,17 +12,6 @@ exports.run = (client, message, args) => {//hamzamertakbaba#1268
     let Member = message.mentions.users.first()
     if (!Member) return message.channel.send(`${message.author} Durumuna bakmak istediğin bir kullanıcıyı etiketlemelisin.`).then(m => m.delete({ timeout: 10000 }));
 
-    /*
-    * let kabulettimi = db.fetch(`kabulettimi_${Member.id}`);
-
-    const kabuletmedi = new MessageEmbed()
-        .setTitle("Durum Bilgisi Görüntülenemiyor")
-        .setDescription("Görünüşe göre bu kullanıcı Thunar Kullanıcı Sözleşmesi'ni kabul etmemiş. Sözümü tutarak bu kullanıcının durum bilgisini gösteremiyorum")
-        .setColor(renk)
-        .setFooter(slogan)
-    if (!kabulettimi) return message.channel.send(kabuletmedi);
-    * */
-
     if (Member.bot) return message.channel.send(`${message.author} Botların durumlarına bakamıyorum`).then(m => m.delete({ timeout: 10000 }));
     if (Member.presence.status === "offline") {
         const Embed = new Discord.MessageEmbed()

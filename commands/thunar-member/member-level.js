@@ -1,32 +1,20 @@
 const { MessageAttachment, MessageEmbed} = require("discord.js");
 const { renk, slogan } = require("../../versioninfo.json");
-const canvacord = require("canvacord");
+/*const canvacord = require("canvacord");*/
 const db = require("quick.db")
 
 module.exports.run = async (client, message, args) => {
 
-    /* const kapali = new MessageEmbed()
-        .setTitle('Bu Özellik Kullanılamıyor')
-        .setDescription('Bu özellik çeşitli modül arızaları yüzünden geçici süre ile devredışı bırakılmıştır')
+    const hata = new MessageEmbed()
+        .setTitle("Rank'a Erişilemiyor")
+        .setDescription("Modülsel bir sorun saptandı. Modül sorunu çözülene kadar rank kullanılamaycak")
         .setColor(renk)
         .setFooter(slogan)
-    message.channel.send(kapali)
 
-     */
+    return message.channel.send(hata)
 
     let mention = message.author;
     if (message.mentions.members.first()) mention = message.mentions.members.first().user;
-
-    /*
-    * let kabulettimi = db.fetch(`kabulettimi_${mention.id}`);
-
-    const kabuletmedi = new MessageEmbed()
-        .setTitle("Rank Görüntülenemiyor")
-        .setDescription("Görünüşe göre bu kullanıcı Thunar Kullanıcı Sözleşmesi'ni kabul etmemiş. Gizlilik politikamız gereği bu kullanıcının rank ve seviyesini gösteremiyorum")
-        .setColor(renk)
-        .setFooter(slogan)
-    if (!kabulettimi) return message.channel.send(kabuletmedi);
-    * */
 
     let user = message.mentions.users.first() || client.users.cache.get(args[0]) || message.author;
 

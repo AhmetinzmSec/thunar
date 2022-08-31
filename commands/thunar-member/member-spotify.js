@@ -8,17 +8,6 @@ exports.run = async (client, message, args) => {
     const user = message.mentions.members.first() || await client.users.fetch(args[0]) || message.member;
     if (!user) return message.channel.send("Birini Etiketle Veya ID'sini Gir!");
 
-    let kabulettimi = db.fetch(`kabulettimi_${user.id}`);
-
-    /*
-    * const kabuletmedi = new MessageEmbed()
-        .setTitle("Spotify Bilgisi Görüntülenemiyor")
-        .setDescription("Görünüşe göre bu kullanıcı Thunar Kullanıcı Sözleşmesi'ni kabul etmemiş. Sözümü tutarak bu kullanıcının spotify bilgisini gösteremiyorum")
-        .setColor(renk)
-        .setFooter(slogan)
-    if (!kabulettimi) return message.channel.send(kabuletmedi);
-    * */
-
     let spotify = user.presence.activities.filter(x => x.name == 'Spotify' && x.type == 'LISTENING')[0];
     if (!spotify) return message.channel.send("Spotify Açık Değil!");
     let resim = `https://i.scdn.co/image/${spotify.assets.largeImage.slice(8)}`;
