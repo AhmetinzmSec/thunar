@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const {createCanvas, loadImage} = require('canvas')
 const db = require('quick.db');
 const ayarlar = require('../../config.json')
+const {renk, slogan} = require("../../versioninfo.json");
 
 exports.run = async (client, message, args) => {
 
@@ -9,6 +10,13 @@ exports.run = async (client, message, args) => {
     const ctx = canvas.getContext('2d')
     let preffix = db.fetch(`prefix_${message.guild.id}`);
     let prefixx = preffix ? preffix : ayarlar.prefix;
+
+    const bozuk = new Discord.MessageEmbed()
+        .setTitle('Sistem Kullanılamıyor')
+        .setDescription(`**${message.author} Bu sunucuda bu sistem aktif değildir. Doğrulama rolü bozulmuş olabilir. Eğer sunucuda sohbete başlamak için onaylama yapman isteniyorsa sunucu sahibiyle iletişime geçerek sistemi aktif etmesini isteyebilirsin**`)
+        .setColor(renk)
+        .setFooter(slogan)
+    if (!db.has("verifyrole" + message.guild.id)) return message.channel.send(bozuk);
 
     function random(randomFlag, min, max) {
         let birharf = "",
@@ -31,7 +39,7 @@ exports.run = async (client, message, args) => {
 
     const hersey = random(false, 6) //burayı değiştirebilirsin
 
-    const bg = await loadImage('https://i.hizliresim.com/ajgn32d.png')
+    const bg = await loadImage('https://i.hizliresim.com/rfrlsa2.png')
 
     ctx.drawImage(bg, 0, 0);
     ctx.font = `100px "sans-serif"`

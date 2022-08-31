@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
-const db = require('quick.db')
+const db = require('quick.db');
+const {renk, slogan} = require("../../versioninfo.json");
 
 const hrfler = ["a","b","c","d","e","f","g","i","h","j","k","k","l","m","n","o","p","s","t","u","v","y","z","1","2","3","4","5","6","7","8","9","0","A","C","B","D","E","F","G","M","H","I","J","K","L","N","O","P","S","T","U","V","Y","Z"]
 const hrfler2 = ["a","b","c","d","e","f","g","i","h","j","k","k","l","m","n","o","p","s","t","u","v","y","z","1","2","3","4","5","6","7","8","9","0","A","C","B","D","E","F","G","M","H","I","J","K","L","N","O","P","S","T","U","V","Y","Z"]
@@ -8,6 +9,13 @@ const hrfler4 = ["a","b","c","d","e","f","g","i","h","j","k","k","l","m","n","o"
 const hrfler5 = ["a","b","c","d","e","f","g","i","h","j","k","k","l","m","n","o","p","s","t","u","v","y","z","1","2","3","4","5","6","7","8","9","0","A","C","B","D","E","F","G","M","H","I","J","K","L","N","O","P","S","T","U","V","Y","Z"]
 
 exports.run = (client, message, params) => {
+
+    const bozuk = new Discord.MessageEmbed()
+        .setTitle('Sistem Kullanılamıyor')
+        .setDescription(`**${message.author} Bu sunucuda bu sistem aktif değildir. Doğrulama rolü bozulmuş olabilir. Eğer sunucuda sohbete başlamak için onaylama yapman isteniyorsa sunucu sahibiyle iletişime geçerek sistemi aktif etmesini isteyebilirsin**`)
+        .setColor(renk)
+        .setFooter(slogan)
+    if (!db.has("verifyrole" + message.guild.id)) return message.channel.send(bozuk);
 
     var random = Math.floor(Math.random()*(hrfler.length-0+1)+0);
     var random2 = Math.floor(Math.random()*(hrfler2.length-0+1)+0);
@@ -23,7 +31,6 @@ exports.run = (client, message, params) => {
 
     var tedoa = h1 + h2 + h3 + h4 + h5
     db.set(`kod_${message.author.id}`,tedoa)
-    message.delete()
 
     const embed = new Discord.MessageEmbed()
         .setTitle("Onay Kodu")

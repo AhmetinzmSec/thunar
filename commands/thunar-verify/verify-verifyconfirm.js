@@ -1,9 +1,18 @@
 const Discord = require('discord.js');
 const db = require("quick.db")
+const {renk, slogan} = require("../../versioninfo.json");
 
 exports.run = (client, message, args) => {
-    const kod = db.get(`kod_${message.author.id}`)
-    if(args[0] !== kod) return message.reply("Hata! Kodunu Kontrol Et").then(tedoad => tedoad.delete(10000))
+
+    const bozuk = new Discord.MessageEmbed()
+        .setTitle('Sistem Kullanılamıyor')
+        .setDescription(`**${message.author} Bu sunucuda bu sistem aktif değildir. Doğrulama rolü bozulmuş olabilir. Eğer sunucuda sohbete başlamak için onaylama yapman isteniyorsa sunucu sahibiyle iletişime geçerek sistemi aktif etmesini isteyebilirsin**`)
+        .setColor(renk)
+        .setFooter(slogan)
+    if (!db.has("verifyrole" + message.guild.id)) return message.channel.send(bozuk);
+
+    const kod = db.fetch(`kod_${message.author.id}`)
+    if(args[0] !== kod) return message.reply("Hata! Kodunu Kontrol Et")
     else {
         message.delete()
 
