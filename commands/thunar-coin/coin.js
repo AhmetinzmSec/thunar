@@ -9,7 +9,7 @@ exports.run = async (client, message, args) => {
 
     const hesapyok = new discord.MessageEmbed()
         .setTitle("Hesap Bulunamadı")
-        .setDescription('**Adınıza açılmış Esir Coin hesabı bulunamadı**')
+        .setDescription('**Adınıza açılmış Thunar Coin hesabı bulunamadı**')
         .setColor(renk)
         .setFooter(slogan)
 
