@@ -78,7 +78,7 @@ exports.run = (client, message, args, member, bot) => {
         .setTitle("Bot Ekleme İsteği")
         .addField("Kullanıcı;", `<@!${user}>`, true)
         .addField("Bot", `[<@!${link}>](https://discord.com/users/${link}/)`)
-        .addField("Link;", `[Botu Sunucuya Ekle](https://discord.com/api/oauth2/authorize?client_id=${link}&permissions=8&scope=bot)`)
+        .addField("Link;", `[Botu Sunucuya Ekle](https://discord.com/api/oauth2/authorize?client_id=${link}&permissions=0&scope=bot)`)
         .addField("Prefix;", pref)
         .addField("Bot Onaylı mı?;", onay)
         .setColor(renk)
