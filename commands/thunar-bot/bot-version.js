@@ -9,7 +9,7 @@ exports.run = async (client, message, args) => {
             .setTitle('Thunar Sürüm Bilgisi')
             .addField(`Sürüm :`, `***${version}***`)
             .addField('Sürüm Kod Adı :', `***${version_name}***`)
-            .addField('Sürüm Notları :', `${surum_notlari}`)
+            .addField("Güncelleme Notları : ", "Bu Özellik **Alpha v0.6** Güncellemesi İle `!güncellemeler` birimine taşınmıştır")
             .setColor(renk)
             .setFooter(slogan)
         message.channel.send(embed)

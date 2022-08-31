@@ -20,8 +20,8 @@ exports.run = async (client, message, args) => {
         });
         return message.reply('Güncelleme eklendi.');
     } else {
-        if(!args[1]) return message.reply('Hangi güncellemeyi silmek istiyorsan o güncellemenin numarasını yazmalısın.');
-        if(isNaN(args[1])) return message.reply('Güncellemenin numarasını yazarken sadece sayı kullanabilirsin.');
+        if(!args[1]) return message.reply('Hangi güncellemeyi silmek istiyorsan o güncellemenin güncelleme notu numarasını yazmalısın.');
+        if(isNaN(args[1])) return message.reply('Güncellemenin güncelleme notu numarasını yazarken sadece sayı kullanabilirsin.');
         const güncellemeler = await database.fetch('güncellemeler');
         if(!güncellemeler || güncellemeler.length <= 0 || !güncellemeler.some(data => data.number === Number(args[1]))) return message.reply('Bu numaraya sahip bir güncelleme bulunamadı.');
         database.set('güncellemeler', güncellemeler.filter(data => data.number !== Number(args[1])));
