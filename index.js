@@ -133,6 +133,8 @@ mongodb.connection.on("open", async () => {
 
     /***************************************************************************************************/
 
+    /*
+    
     client.on("message", message => {
         if (!message.author.bot) {
             if (message.content == db.get(`${message.guild.id}özelkismi`)) {
@@ -143,6 +145,7 @@ mongodb.connection.on("open", async () => {
 
     /***************************************************************************************************/
 
+    /*
     client.on("guildMemberAdd", member => {
 
         const guild = member.guild;
@@ -182,6 +185,7 @@ mongodb.connection.on("open", async () => {
 
     })
 
+    */
     /***************************************************************************************************/
 
     console.log("MongoDB Bağlantısı Sağlandı")
