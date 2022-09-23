@@ -53,6 +53,19 @@ module.exports = async message => {
         .setColor(renk)
         .setFooter(slogan)
     if (db.fetch(`cokaradalistere_${message.author.id}`)) return message.channel.send(kullanamazsin)
+    
+    if (message.guild.id == "1011919694464294932") {
+
+        const Embed = new EmbedBuilder()
+          .setTitle("Lonca Karalistede")
+          .setDescription(`Görünüşe göre loncanız karalisteye alınmış. **Thunar komutları bu loncada kısıtlanmıştır**. Loncayı karalisteden çıkarmak topluluk kurallarımız gereği mümkün değildir. Thunar'ı loncanızdan atmayı tercih edebilirsiniz`)
+          .setColor("Red")
+        .setFooter(slogan)
+
+        message.channel.send(Embed)
+        return;
+
+      }
 
     if (cmd && cmd.help.name !== 'bakım-modu') {
 
