@@ -68,10 +68,3 @@ exports.help = {
     description: '',
     usage: ''
 };
-
-/*
-   BAN İZNİ : 2
-   ADMİN İZNİ : 3
-   SADECE GELİŞTİRİCİ : 4
-   ATMA İZNİ : 5
- */
