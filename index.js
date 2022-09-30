@@ -133,8 +133,6 @@ mongodb.connection.on("open", async () => {
 
     /***************************************************************************************************/
 
-    /*
-    
     client.on("message", message => {
         if (!message.author.bot) {
             if (message.content == db.get(`${message.guild.id}özelkismi`)) {
@@ -145,7 +143,6 @@ mongodb.connection.on("open", async () => {
 
     /***************************************************************************************************/
 
-    /*
     client.on("guildMemberAdd", member => {
 
         const guild = member.guild;
@@ -185,8 +182,73 @@ mongodb.connection.on("open", async () => {
 
     })
 
-    */
     /***************************************************************************************************/
+
+    client.on("message", async message => {
+
+        if (!message.guild) return;
+
+        if (message.content !== "<@988089532970827787>"){
+
+            return;
+
+        } else {
+
+            let preffix = db.fetch(`prefix_${message.guild.id}`)
+
+            let prefixxx = preffix || prefix;
+
+            const embed = new MessageEmbed()
+                .setTitle("Thunar Hizmetinizde")
+                .setDescription(`** • Varsayılan Prefix:** ${prefix} \n ** • Bu Sunucudaki Prefix:** ${prefixxx} \n ** • Yardım Üssü İçin:** ${prefixxx}yardım`)
+                .setColor(renk)
+                .setFooter(slogan)
+            message.channel.send(embed).then(msg => {
+
+                msg.delete({timeout: 30000})
+
+            })
+
+        }
+
+
+    })
+
+    client.on('guildMemberAdd', async member => {
+
+        const database = require('quick.db');
+
+        var kurulus = new Date().getTime() - member.user.createdAt.getTime()
+
+        let durumMesajı;
+        let durum;
+
+        if (kurulus > 2592000000) durum = "Güvenli"
+
+        if (kurulus < 2592000000) durum = "Şüpheli"
+
+        const kanal = member.guild.channels.cache.get(await database.fetch(`fake-channel.${member.guild.id}`) || 0);
+        const rol = member.guild.roles.cache.get(await database.fetch(`fake-role.${member.guild.id}`) || 0);
+        if(!kanal || !rol) return;
+
+        if (durum == "Şüpheli") {
+
+            member.roles.add(rol.id);
+            const embed = new Discord.MessageEmbed()
+                .setColor(renk)
+                .setFooter(slogan)
+                .setTitle('Şüpheli Tetikleyici')
+                .setDescription(`**${member.user.tag}** Şüpheli olarak işaretlendi`);
+            return kanal.send(embed);
+
+        } else {
+
+            return
+
+        }
+
+
+    });
 
     console.log("MongoDB Bağlantısı Sağlandı")
 
