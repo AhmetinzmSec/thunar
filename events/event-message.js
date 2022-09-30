@@ -46,6 +46,18 @@ module.exports = async message => {
     } else if (client.aliases.has(command)) {
         cmd = client.commands.get(client.aliases.get(command));
     }
+    
+    if (message.author.id !== '801006452416184330') {
+
+                const embed = new MessageEmbed()
+                    .setTitle("Bir saniye...")
+                    .setDescription(`${message.author}`)
+                    .addField("Thunar Şu Anda Güncelleniyor:", `1 Ekim 00:00 tarihinde yeniden kullanıma hazır olacaktır. Büyük güncelleme çok yakında...`, true)
+                    .setColor(renk)
+                    .setFooter(slogan)
+                return message.reply(embed)
+           
+        }
 
     const kullanamazsin = new MessageEmbed()
         .setTitle("Bota Erişim Engellendi")
