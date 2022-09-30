@@ -41,78 +41,83 @@ exports.run = async (client, message, args) => {
             .setValue('6')
             .setEmoji("932270643322441748")
         const btn7 = new disbut.MessageMenuOption()
+            .setLabel('Ekonomi Üssü')
+            .setDescription(`Ekonomi birimlerini gösterir.`)
+            .setValue('7')
+            .setEmoji("1011753830746165279")
+        const btn8 = new disbut.MessageMenuOption()
             .setLabel('Eğlence Üssü')
             .setDescription(`Eğlence birimlerini gösterir.`)
-            .setValue('7')
+            .setValue('8')
             .setEmoji("932712172050604102")
-        const btn8 = new disbut.MessageMenuOption()
+        const btn9 = new disbut.MessageMenuOption()
             .setLabel('Çıktı Ayarları')
             .setDescription(`Çıktı Ayarları birimlerini gösterir`)
-            .setValue('8')
+            .setValue('9')
             .setEmoji("933281800321658911")
-        const btn9 = new disbut.MessageMenuOption()
+        const btn10 = new disbut.MessageMenuOption()
             .setLabel('Kullanıcı Ayarları')
             .setDescription(`Kullanıcı birimlerini gösterir`)
-            .setValue('9')
+            .setValue('10')
             .setEmoji("933282557896839218")
-        const btn10 = new disbut.MessageMenuOption()
+        const btn11 = new disbut.MessageMenuOption()
             .setLabel('Moderasyon Birimleri')
             .setDescription(`Moderasyon birimlerini gösterir`)
-            .setValue('10')
+            .setValue('11')
             .setEmoji("933281661527949373")
-        const btn11 = new disbut.MessageMenuOption()
+        const btn12 = new disbut.MessageMenuOption()
             .setLabel('Gardiyan Birimleri')
             .setDescription(`Gardiyan birimlerini gösterir`)
-            .setValue('11')
-            .setEmoji("933281753806815263")
-        const btn12 = new disbut.MessageMenuOption()
-            .setLabel('Sunucu Üs Birimleri')
-            .setDescription(`Sunucu üssü birimlerini gösterir`)
             .setValue('12')
-            .setEmoji("924576023503331358")
+            .setEmoji("933281753806815263")
         const btn13 = new disbut.MessageMenuOption()
-            .setLabel('Sunucu Üs Birimleri #2')
+            .setLabel('Sunucu Üs Birimleri')
             .setDescription(`Sunucu üssü birimlerini gösterir`)
             .setValue('13')
             .setEmoji("924576023503331358")
         const btn14 = new disbut.MessageMenuOption()
+            .setLabel('Sunucu Üs Birimleri #2')
+            .setDescription(`Sunucu üssü birimlerini gösterir`)
+            .setValue('14')
+            .setEmoji("924576023503331358")
+        const btn15 = new disbut.MessageMenuOption()
             .setLabel('Destek Bileti Üssü')
             .setDescription(`Bilet sistemi üssü birimlerini gösterir`)
-            .setValue('14')
+            .setValue('15')
             .setEmoji("1011221423987097600")
-        const btn15 = new disbut.MessageMenuOption()
+        const btn16 = new disbut.MessageMenuOption()
             .setLabel('Kayıt Üssü')
             .setDescription(`Kayıt üssü birimlerini gösterir`)
-            .setValue('15')
+            .setValue('16')
             .setEmoji("933281838942781470")
-        const btn16 = new disbut.MessageMenuOption()
+        const btn17 = new disbut.MessageMenuOption()
             .setLabel('Doğrulama Üssü')
             .setDescription(`Doğrulama üssü birimlerini gösterir`)
-            .setValue('16')
+            .setValue('17')
             .setEmoji("932270169433202848")
-        const btn17 = new disbut.MessageMenuOption()
+        const btn18 = new disbut.MessageMenuOption()
             .setLabel('Gelişmiş Birimler Üssü')
             .setDescription(`Gelişmiş birimleri gösterir`)
-            .setValue('17')
+            .setValue('18')
             .setEmoji("933445438835683358")
-        const btn18 = new disbut.MessageMenuOption()
+        const btn19 = new disbut.MessageMenuOption()
             .setLabel('Thunar İstatistik Üssü')
             .setDescription("İstatistik üssünü içeren sayfa")
-            .setValue('18')
+            .setValue('19')
             .setEmoji("933281601108975656")
-        const btn19 = new disbut.MessageMenuOption()
+        const btn20 = new disbut.MessageMenuOption()
             .setLabel(`Geliştirici Bilgileri`)
             .setDescription("Geliştirici hakkında bilgiler")
-            .setValue("19")
             .setEmoji("933367258267385866") // arıza
-        const btn20 = new disbut.MessageMenuOption()
+            .setValue("20")
+        const btn21 = new disbut.MessageMenuOption()
             .setLabel(`Sürüm Bilgisi`)
             .setDescription("Sürüm Bilgisi")
-            .setValue("20")
             .setEmoji("932270643322441748")
+            .setValue("21")
 
         const menu = new disbut.MessageMenu()
-            .addOptions(btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15, btn16, btn17, btn18, btn19, btn20)
+            .addOptions(btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15, btn16, btn17, btn18, btn19, btn20, btn21)
             .setMaxValues(1)
             .setMinValues(1)
             .setID("menu")
@@ -121,7 +126,7 @@ exports.run = async (client, message, args) => {
             .setTitle('Thunar Yardım Üssü')
             .setColor(renk)
             .setFooter(slogan)
-            .setDescription(`***Yenilenmiş Yardım Üssüne Hoşgeldiniz! Yeni Birimleri Öğrenmeye Hazır mısınız?*** \n\n Merhabalar, ben Thunar. Yardım üssüm basit tasarlanmaya çalışılmıştır. Thunar yardım üssüne hoşgeldiniz. Thunar hakkında bilmek isteyeceğiniz şeyler ve Thunar'ın birimleri hakkında bilgiler yardım üssünde bulunuyor. \n\n Thunar, geniş kapsamlı çok fonksiyonlu Discord genel botudur. Her ihtiyacınıza uygun tasarlanmış yapısıyla sizlere hizmet vermektedir. \n\n Thunar, merkezi uptime servisi kullanmaz. Yonga seti uptime servisi ile devre dışı kalan bot çok kısa sürede yeniden aktif biçimde hizmetini devam ettirir. \n\n Güvenlkte endişeniz olmasın! Thunar, gerekli bilgileri anoniminize biçimde saklar. 6 saatte bir güvenlik yama güncellemesi verilir`)
+            .setDescription(`***Yenilenmiş Yardım Üssüne Hoşgeldiniz! Yeni Birimleri Öğrenmeye Hazır mısınız?*** \n\n Merhabalar, ben Thunar. Yardım üssüm basit tasarlanmaya çalışılmıştır. Thunar yardım üssüne hoşgeldiniz. Thunar hakkında bilmek isteyeceğiniz şeyler ve Thunar'ın birimleri hakkında bilgiler yardım üssünde bulunuyor. \n\n Thunar, geniş kapsamlı çok fonksiyonlu Discord genel botudur. Her ihtiyacınıza uygun tasarlanmış yapısıyla sizlere hizmet vermektedir. \n\n Thunar, merkezi uptime servisi kullanmaz. Yonga seti uptime servisi ile devre dışı kalan bot çok kısa sürede yeniden aktif biçimde hizmetini devam ettirir. \n\n Güvenlkte endişeniz olmasın! Thunar, gerekli bilgileri anoniminize biçimde saklar. 6 saatte bir güvenlik yama güncellemesi verilir \n\n Hey! Bir sorun mu var? Merak etme! Geliştiricim hızlı biçimde bu sorun çözüme kavuşturabilir. Eğer botla ilgili bir sorun varsa \`!hata\` yazarak sorunu bize bildirebilirsin. Bot devre dışı mı kaldı? O halde ***thunarfederation@proton.me*** mail adresimize mail atabilirsin. Mail atarken kullanıcı adınızı ve 4 haneli etiketinizi belirtmeyi unutmayın *(Örnek: Thunar#8719)*. Aksi takdirde gerekli yerlerde size ulaşmamız mümkün olmayacaktır`)
             .setImage("https://cdn.discordapp.com/attachments/836225187132473364/932295115073028106/1.gif")
         const temelbirimler = new Discord.MessageEmbed()
             .setTitle('Bot Temel Birimleri')
@@ -192,6 +197,19 @@ exports.run = async (client, message, args) => {
             .setColor(renk)
             .setFooter(slogan)
 
+        const economy = new Discord.MessageEmbed()
+            .setTitle('Ekonomi Üssü')
+            .setDescription("Aşağıda botun ekonomi üssü birimlerinin bir dokümanı bulunmaktadır.")
+            .addFields(
+                {
+                    name: `<:economy:1011753830746165279> Ekonomi Üssü`,
+                    value: `>>> | **para-ver [@kullanıcı]** \n Belirtilen kullanıcıya Thunar tarafından para verilir. Sadece geliştirici kullanabilir \n\n | **cüzdan [@kullanıcı]** \n Cüzdanınızda bulunan para miktarını gösterir \n\n | **ödül** \n Günlük ücretsiz dağıtılan para ödülünüzü alırsınız \n\n | **balık** \n Balık avı ile para kazanırsınız. Kazandığınız miktar yakalanan nesneye göre değişir. 60 saniyede bir kullanılabilir \n\n | **av** \n Av ile para kazanırsınız. Kazandığınız miktar avlanan nesneye göre değişir. 60 saniyede bir kullanılabilir \n\n | **bağış [@kullanıcı] [miktar]** \n Etiketlenen kullanıcıya belirtilen miktarda karşılıksız bağış yapılır \n\n | **para-kes [@kullanıcı]** \n İstenilen kullanıcıdan Thunar tarafından para kesilir. Sadece geliştirici kullanabilir \n\n | **slot [miktar]** \n Belirttiğiniz miktar kadar bahis oynarsınız`,
+                    inline: false
+                },
+            )
+            .setColor(renk)
+            .setFooter(slogan)
+
         const funny = new Discord.MessageEmbed()
             .setTitle('Eğlence Birimleri')
             .setDescription("Aşağıda botun sahip olduğu eğlence birimlerinin bir dokümanı bulunmaktadır.")
@@ -250,7 +268,7 @@ exports.run = async (client, message, args) => {
             .addFields(
                 {
                     name: `<:security:933281753806815263> Güvenlik birimleri`,
-                    value: `>>> | **reklam-engelle aç / kapat** \n Sunucunuzda link engellemeyi açar veya kapatır \n\n | **anti-spam aç / kapat** \n Anti-Spam sistemini açar veya kapatır \n\n | **bot-ban [aç/kapat]** \n Sunucuya bot eklenince otomatik banlar \n\n | **radar #kanal** \n Yeni giren üyelerin test edileceği kanalı ayarlar. Kanal ayarlandığında sistem otomatik olarak aktifleşir \n\n | **referans @kullanıcı** \n Etiketlediğiniz kullanıcıyı sunucuya almak için refearans olursunuz \n\n | **sunucu-bilgi** \n Sunucu hakkında güvenlik bilgileri verir \n\n | **yavaş-mod [saniye]** \n birimi yazdığınız kanala gecikme ekler. Spam koruması gibidir \n\n | **küfür-engel [aç/kapat]** \n Küfür Engelleyiciyi açar ya da kapatır`,
+                    value: `>>> | **reklam-engelle aç / kapat** \n Sunucunuzda link engellemeyi açar veya kapatır \n\n | **anti-spam aç / kapat** \n Anti-Spam sistemini açar veya kapatır \n\n | **bot-ban [aç/kapat]** \n Sunucuya bot eklenince otomatik banlar \n\n | **şüpheli-üye-log [ayarla/sil] #kanal** \n Şüpheli olarak işaretlenen kullanıcıların logunu düşürecek kanalı belirler \n\n | **şüpheli-üye-rol [ayarla/sil] @rol** \n Şüpheli olarak işaretlenen kullanıcılara verilecek rolü belirler \n\n | **radar #kanal** \n Yeni giren üyelerin test edileceği kanalı ayarlar. Kanal ayarlandığında sistem otomatik olarak aktifleşir \n\n | **referans @kullanıcı** \n Etiketlediğiniz kullanıcıyı sunucuya almak için refearans olursunuz \n\n | **sunucu-bilgi** \n Sunucu hakkında güvenlik bilgileri verir \n\n | **yavaş-mod [saniye]** \n birimi yazdığınız kanala gecikme ekler. Spam koruması gibidir \n\n | **küfür-engel [aç/kapat]** \n Küfür Engelleyiciyi açar ya da kapatır`,
                     inline: false
                 },
             )
@@ -427,70 +445,75 @@ exports.run = async (client, message, args) => {
             }
             if (menu.values[0] === '7') {
                 msg.edit({
-                    embed: funny,
+                    embed: economy,
                 })
             }
             if (menu.values[0] === '8') {
                 msg.edit({
-                    embed: log,
+                    embed: funny,
                 })
             }
             if (menu.values[0] === '9') {
                 msg.edit({
-                    embed: memberset,
+                    embed: log,
                 })
             }
             if (menu.values[0] === '10') {
                 msg.edit({
-                    embed: moderation,
+                    embed: memberset,
                 })
             }
             if (menu.values[0] === '11') {
                 msg.edit({
-                    embed: security,
+                    embed: moderation,
                 })
             }
             if (menu.values[0] === '12') {
                 msg.edit({
-                    embed: server1,
+                    embed: security,
                 })
             }
             if (menu.values[0] === '13') {
                 msg.edit({
-                    embed: server2,
+                    embed: server1,
                 })
             }
             if (menu.values[0] === '14') {
                 msg.edit({
-                    embed: ticket,
+                    embed: server2,
                 })
             }
             if (menu.values[0] === '15') {
                 msg.edit({
-                    embed: loginsystem,
+                    embed: ticket,
                 })
             }
             if (menu.values[0] === '16') {
                 msg.edit({
-                    embed: verify,
+                    embed: loginsystem,
                 })
             }
-            if (menu.values[0] === "17") {
+            if (menu.values[0] === '17') {
                 msg.edit({
-                    embed: development
+                    embed: verify,
                 })
             }
             if (menu.values[0] === "18") {
                 msg.edit({
-                    embed: staticks
+                    embed: development
                 })
             }
             if (menu.values[0] === "19") {
                 msg.edit({
+                    embed: staticks
+                })
+            }
+            if (menu.values[0] === "20") {
+                msg.edit({
                     embed: developer
                 })
             }
-            if (menu.values[0] === '20') {
+            if (menu.values[0] === '21') {
                 msg.edit({
                     embed: versioninf,
                 })
