@@ -143,47 +143,6 @@ mongodb.connection.on("open", async () => {
 
     /***************************************************************************************************/
 
-    client.on("guildMemberAdd", member => {
-
-        const guild = member.guild;
-
-
-        if (!db.has("log" + member.guild.id)) return;
-        const log_id = db.fetch("log" + member.guild.id)
-        const log = member.guild.channels.cache.get(log_id) // banlanınca mesajı gideceği kanal
-
-        if (db.has(`botban_${member.guild.id}`, "acik")){
-
-        if (member.user.bot !== true) {
-
-        } else {
-
-            const banbot = new MessageEmbed()
-                .setTitle("Bot Yasaklandı")
-                .setDescription(`Sunucuya bir bot eklendi. Bu sunucuda botlara izin verilmediği için yasaklandı`)
-                .addField("Yasaklanan Bot:",  member.user.tag)
-                .setColor(renk)
-                .setFooter(slogan)
-
-             log.send(banbot)
-
-                .catch(console.error);
-
-            member.ban(member);
-
-        }
-
-        } else
-        {
-
-            return;
-
-        }
-
-    })
-
-    /***************************************************************************************************/
-
     client.on("message", async message => {
 
         if (!message.guild) return;
