@@ -64,36 +64,6 @@ mongodb.connection.on("open", async () => {
         return permlvl;
     };
 
-    client.on('guildCreate', async guild => {
-
-        const sunucu = client.channels.cache.get("925412630057865266")
-        const embed = new Discord.MessageEmbed()
-            .setTitle("Thunar Yeni Bir Sunucuda Hizmete Başladı")
-            .setDescription(`• Artık Thunar **${client.guilds.cache.size.toLocaleString()}** Sunucuda Hizmette`)
-            .addField("Sunucu Şefi:", `${guild.owner.user.username}` + '#' + `${guild.owner.user.discriminator}`, true)
-            .addField("Sunucu Rumuzu:", `${guild.name}`, true)
-            .addField("Sunucu Kimliği:", `${guild.id}`)
-            .setFooter(slogan)
-            .setColor(renk)
-        sunucu.send(embed)
-
-    });
-
-    client.on('guildDelete', async guild => {
-
-        const sunucu = client.channels.cache.get("925412630057865266")
-        const embed = new Discord.MessageEmbed()
-            .setTitle("Thunar Bir Sunucuda Hizmetini Durdurdu")
-            .setDescription(`• Artık Thunar **${client.guilds.cache.size.toLocaleString()}** Sunucuda Hizmette`)
-            .addField("Sunucunun Şefi:", `${guild.owner.user.username}` + '#' + `${guild.owner.user.discriminator}`, true)
-            .addField("Sunucu Rumuzu:", `${guild.name}`, true)
-            .addField("Sunucu Kimliği:", `${guild.id}`)
-            .setFooter(slogan)
-            .setColor(renk)
-        sunucu.send(embed)
-
-    });
-
     /***************************************************************************************************/
 
     client.on("guildMemberUpdate", (oldMember, newMember) => {
