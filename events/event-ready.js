@@ -15,9 +15,9 @@ module.exports = client => {
 
     var randommessages = [
 
-        `${version} || Dünya Kız Çocukları Günü Kutlu Olsun!`,
-        `${version} || Çocuklar Gelecektir...`,
-        /*`${version} || !güncellemeler`,*/
+        `${version} || !yardım`,
+        `${version} || !şartlar`,
+        `${version} || !güncellemeler`,
         `${version} || ${version_name}`
 
     ]
