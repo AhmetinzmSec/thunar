@@ -7,7 +7,7 @@ const { renk, slogan } = require("../../versioninfo.json");
 const db = require("quick.db");
 const {MessageEmbed} = require("discord.js");
 
-exports.run = (client, message, args) => {//hamzamertakbaba#1268
+exports.run = (client, message, args) => {
 
     let Member = message.mentions.users.first()
     if (!Member) return message.channel.send(`${message.author} Durumuna bakmak istediğin bir kullanıcıyı etiketlemelisin.`).then(m => m.delete({ timeout: 10000 }));
